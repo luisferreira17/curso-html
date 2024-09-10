@@ -1,12 +1,12 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url('c:\Users\ead\Desktop\Desenvolvimento front- end\animação css\img\richard-rios-do-palmeiras-comemora-apos-marcar-contra-o-vitoria-pelo-brasileirao-1713135382450-v2-450x450-1713181301.jpg');
+    background-image: url('https://lncimg.lance.com.br/cdn-cgi/image/width=828,quality=75,fit=pad,format=webp/uploads/2024/05/000_34KZ6NB-scaled-aspect-ratio-512-320.jpg');
     background-size: cover;
-    color: #333;
+    color: #f8f7f7;
 }
 
 header {
-    background-image: url('c:\Users\ead\Desktop\Desenvolvimento front- end\animação css\img\endrick-palmeiras-liverpool-libertadores-e1715298867463.webp');
+    background-image: url('https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/09/cristiano-ronaldo.jpeg?w=420&h=240&crop=1&quality=85');
     background-size: cover;
     text-align: center;
     padding: 50px;
@@ -16,4 +16,110 @@ header h1 {
     color: white;
     font-size: 3em;
 }
+
+.text-effects h2{
+    margin: 20px 0;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.effect-fill:hover {
+    background-image: linear-gradient(to right, #f270, #ff9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.effect-scale:hover {
+    transform: scale(1.1);
+}
+
+.effect-fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+} 
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; 
+    }
+}
+
+.effect-rotate:hover {
+    transform: rotate(50deg);
+}
+
+.effect-shadow:hover {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0);
+}
+
+.effect-border-grow:hover {
+    border: 2px solid #000;
+    padding: 5px;
+}
+
+.effect-glow:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.effect-float:hover {
+    transform: translateY(-10px);
+}
+
+.effect-color-shift:hover {
+    color: #288a1b;
+}
+
+.effect-blur:hover {
+    filter: blur(2px);
+}
+
+.box-effects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+.box {
+    width: 200px;
+    height: 150px;
+    background-color: #f8f7f7;
+    color: #288a1b;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.box-shadow:hover {
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.box-zoom:hover {
+    transform: scale(1.1);
+}
+.box-hover-bg:hover {
+    background-color: #288a1b;
+}
+.box-rotate:hover {
+    transform: rotate(360deg);
+}
+
+.box-border-radius:hover {
+    border-radius: 50%;
+}
+
+.box-translate:hover{
+    transform: translate(20px);
+}
+
+
+
+
+
+
+
+
 
