@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imóveis à Venda</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Imóveis à Venda</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Início <span class="sr-only">(atual)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Encontre Seu Novo Lar</h1>
+            <p class="lead">Descubra as melhores propriedades disponíveis no mercado.</p>
+        </div>
+    </header>
+
+    <!-- Property Listings -->
+    <section class="container my-5">
+        <div class="row">
+            <!-- Property 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="c:\Users\ead\Documents\site bootstrap\app moderno.jfif" class="card-img-top" alt="Imóvel 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Apartamento Moderno</h5>
+                        <p class="card-text">3 quartos, 2 banheiros, sala ampla, cozinha equipada.</p>
+                        <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Property 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="c:\Users\ead\Documents\site bootstrap\casa com jardim.jfif" class="card-img-top" alt="Imóvel 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Casa com Jardim</h5>
+                        <p class="card-text">4 quartos, 3 banheiros, grande quintal.</p>
+                        <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Property 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="c:\Users\ead\Documents\site bootstrap\cobertura-penthouse-le-sense-agua-verde-1.png" class="card-img-top" alt="Imóvel 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Cobertura Luxuosa</h5>
+                        <p class="card-text">5 quartos, piscina, vista panorâmica.</p>
+                        <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="container my-5"></section>
+        <h2 class="text-center mb-4">Sobre Nós</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Somos uma empresa dedicada a encontrar as melhores propriedades para você e sua família. Com anos de experiência no mercado imobiliário, oferecemos uma ampla gama de imóveis que atendem às suas necessidades e desejos.</p>
+                <p>Nossa missão é proporcionar um atendimento personalizado e ajudar você a encontrar o lar dos seus sonhos. Seja para compra, venda ou aluguel, estamos aqui para oferecer o melhor suporte e orientação.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="c:\Users\ead\Documents\site bootstrap\logo.png" class="img-fluid rounded" alt="Sobre Nós">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Entre em Contato</h2>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Seu Nome" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email">E-mail</label>
+                        <input type="email" class="form-control" id="email" placeholder="Seu E-mail" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea class="form-control" id="mensagem" rows="4" placeholder="Sua Mensagem" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Imóveis à Venda. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+    
+</body>
+</html>
