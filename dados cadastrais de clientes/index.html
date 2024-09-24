@@ -11,12 +11,13 @@
     <div class="container">
         <h1>Cadastro de clientes</h1>
         <form id="clienteForm">
-            <input type="text" id="nome" placeholder="Nome" required>
-            <input type="number" id="idade" placeholder="Idade" required>
-            <input type="email" id="emails" placeholder="Email(separados por virgula)" required>
+            <input type="text" id="nome" placeholder="Nome Completo" required>
+            <input type="number" id="idade" placeholder="Idade" min="19" required>
+            <input type="text" id="curso" placeholder="Curso Desejado" required>
+            <input type="email" id="emails" placeholder="Email (separados por virgula)" required>
             <button type="submit">Cadastrar Clientes</button>
         </form> 
-        <div id="clientesList"></div>
+        <div id="alunosList"></div>
     </div>
     <script src="script.js"></script>
 
