@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro de Clientes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <h1>Cadastro de clientes</h1>
+        <h1>Cadastro de Clientes</h1>
         <form id="clienteForm">
             <input type="text" id="nome" placeholder="Nome Completo" required>
             <input type="number" id="idade" placeholder="Idade" min="19" required>
             <input type="text" id="curso" placeholder="Curso Desejado" required>
-            <input type="email" id="emails" placeholder="Email (separados por virgula)" required>
+            <input type="email" id="emails" placeholder="Email (separados por vírgula)" required>
             <button type="submit">Cadastrar Clientes</button>
         </form> 
-        <div id="alunosList"></div>
+        <button id="printButton">Imprimir Lista</button> <!-- Botão para imprimir a lista -->
+        <div id="alunosList"></div> <!-- Lista de alunos cadastrados -->
     </div>
-    <script src="script.js"></script>
 
-    
+    <script src="script.js"></script>
 </body>
 </html>
