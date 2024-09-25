@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutricionista</title>
+    <!-- Link via CDN para Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+  
+    <header class="bg-light text-center p-4">
+        <h1>Consultoria Nutricional</h1>
+        <nav>
+            <a href="#produtos" class="mx-3">Produtos</a>
+            <a href="#receitas" class="mx-3">Receitas</a>
+            <a href="#exames" class="mx-3">Exames</a>
+            <a href="#imc" class="mx-3">IMC</a>
+        </nav>
+    </header>
+
+    <!-- Banner/Slides -->
+    <section id="banner" class="mb-4">
+        <div id="carouselExample" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="c:\Users\ead\Documents\luis\62EC242B-7D41-418A-89A0-5AD86FA41E5E.jpeg" class="d-block w-100" alt="Banner 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="c:\Users\ead\Documents\luis\nutricionista-exames-11052023.webp" class="d-block w-100" alt="Banner 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="c:\Users\ead\Documents\luis\0o6vsfIkjjhgPhwwqBLeCfLKjiPAcmzn7h7Fnimr.jpeg" class="d-block w-100" alt="Banner 3">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Coleções -->
+    <section id="produtos" class="text-center mb-4">
+        <h2>Coleções</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Produtos</h3>
+                <p>Conheça nossos produtos saudáveis.</p>
+            </div>
+            <div class="col-md-3">
+                <h3>Receitas</h3>
+                <p>Receitas deliciosas e saudáveis.</p>
+            </div>
+            <div class="col-md-3">
+                <h3>Exames</h3>
+                <p>Exames para acompanhar sua saúde.</p>
+            </div>
+            <div class="col-md-3">
+                <h3>IMC</h3>
+                <p>Calcule seu IMC aqui.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vídeo -->
+    <section class="text-center mb-4">
+        <h2>Conheça Nosso Trabalho</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2RDlDtrnL2I?si=ZcQtPuQKDsuKMNQH" frameborder="0" allowfullscreen></iframe>
+    <br></br>
+    </section>
+
+    <!-- Formulário de Contato -->
+    <section class="mb-4">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Contato</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem:</label>
+                        <textarea class="form-control" id="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <img src="c:\Users\ead\Documents\luis\272723795_6302730077723_2164028108168036389_n.jpg" alt="Imagem de Contato" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+    <!-- Especialidades -->
+    <section class="mb-4">
+        <h2>Especialidades</h2>
+        <div class="d-grid grid-template-columns-4">
+            <div class="p-3 border">Nutrição Clínica</div>
+            <div class="p-3 border">Nutrição Esportiva</div>
+            <div class="p-3 border">Nutrição Funcional</div>
+            <div class="p-3 border">Nutrição Infantil</div>
+        </div>
+    </section>
+
+    <!-- Calculadora IMC -->
+    <section class="mb-4">
+        <h2>Calculadora IMC</h2>
+        <form id="imcForm">
+            <div class="form-group">
+                <label for="weight">Peso (kg):</label>
+                <input type="number" class="form-control" id="weight" required>
+            </div>
+            <div class="form-group">
+                <label for="height">Altura (m):</label>
+                <input type="number" class="form-control" id="height" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Calcular IMC</button>
+        </form>
+        <p id="imcResult" class="mt-3"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center p-4">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Sobre Nós</h5>
+                <p>Informações sobre a equipe.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Serviços</h5>
+                <p>Consultoria e acompanhamento nutricional.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Contato</h5>
+                <p>Email: contato@nutricionista.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Calculadora IMC
+        document.getElementById('imcForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value);
+            const imc = (weight / (height * height)).toFixed(2);
+            document.getElementById('imcResult').innerText = `Seu IMC é: ${imc}`;
+        });
+    </script>
+
+</body>
+</html>
