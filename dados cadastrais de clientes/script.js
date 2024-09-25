@@ -1,36 +1,38 @@
-let clientes = [];
+document.getElementById('clienteForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevê o envio padrão do formulário
+    
+    // Obtém os valores dos campos
+    const nome = document.getElementById('nome').value;
+    const idade = document.getElementById('idade').value;
+    const curso = document.getElementById('curso').value;
+    const emails = document.getElementById('emails').value;
 
-// Função para cadastrar um novo cliente
-function cadastrarCliente(nome, idade, email) {
-  let novoCliente = {
-    nome: nome,
-    idade: idade,
-    email: email,
-    exibirInformacoes: function() {
-      return `Nome: ${this.nome}, Idade: ${this.idade}, Email: ${
-this.email
-}`;
-    }
-  };
+    // Cria um novo elemento de lista
+    const aluno = document.createElement('div');
+    aluno.className = 'aluno'; // Adiciona uma classe para estilização
+    aluno.innerHTML = `<strong>Nome:</strong> ${nome} | <strong>Idade:</strong> ${idade} | <strong>Curso:</strong> ${curso} | <strong>Email:</strong> ${emails}`;
+    
+    // Adiciona o novo aluno à lista
+    document.getElementById('alunosList').appendChild(aluno);
+    
+    // Limpa os campos do formulário
+    this.reset();
+});
 
-  // Adiciona o novo cliente ao array
-  clientes.push(novoCliente);
-}
+// Função para imprimir a lista de alunos na mesma página
+document.getElementById('printButton').addEventListener('click', function() {
+    const alunosList = document.getElementById('alunosList').innerHTML; // Obtém o conteúdo da lista
 
-// Função para exibir todos os clientes cadastrados
-function listarClientes() {
-  clientes.forEach(function(cliente) {
-    console.log(cliente.exibirInformacoes());
-  });
-}
+    // Cria um novo elemento de impressão
+    const printDiv = document.createElement('div');
+    printDiv.innerHTML = `<h1>Lista de Alunos</h1>${alunosList}`; // Adiciona o conteúdo da lista
+    printDiv.className = 'print-area'; // Classe para estilização da área de impressão
 
-// Cadastrando alguns clientes
-cadastrarCliente("Ana Silva", 25, "ana.silva@email.com");
+    // Adiciona o novo elemento ao corpo do documento
+    document.body.appendChild(printDiv);
+    
 
-cadastrarCliente("João Pereira", 30, "joao.pereira@email.com");
-
-cadastrarCliente("Maria Oliveira", 22, "maria.oliveira@email.com");
-
-
-// Listando todos os clientes cadastrados
-listarClientes(); 
+    // Remove a área de impressão após a impressão
+    document.body.removeChild(printDiv);
+    document.head.removeChild(style);
+});
