@@ -1,0 +1,94 @@
+/* Define o estilo do corpo da página */
+body {
+    background-color: #1e1e1e; /* Cor de fundo escura */
+    color: #ffffff; /* Cor do texto em branco */
+    font-family: Arial, sans-serif; /* Fonte utilizada */
+    margin: 0; /* Remove margens padrão do navegador */
+    padding: 20px; /* Adiciona um padding de 20px ao redor do conteúdo */
+}
+
+/* Estilo do contêiner principal */
+.container {
+    max-width: 800px; /* Largura máxima do contêiner */
+    margin: auto; /* Centraliza o contêiner horizontalmente */
+}
+
+/* Estilo do título principal */
+h1 {
+    text-align: center; /* Centraliza o texto do título */
+}
+
+/* Estilo do campo de entrada de texto */
+input {
+    width: calc(100% - 100px); /* Largura do campo de entrada, subtraindo espaço para o botão */
+    padding: 10px; /* Adiciona padding ao campo */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 5px; /* Arredonda as bordas do campo */
+}
+
+/* Estilo do botão de adicionar tarefa */
+button {
+    padding: 10px; /* Adiciona padding ao botão */
+    border: none; /* Remove a borda padrão */
+    background-color: #3498db; /* Cor de fundo azul */
+    color: white; /* Cor do texto em branco */
+    border-radius: 5px; /* Arredonda as bordas do botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+button:hover {
+    background-color: #2980b9; /* Cor de fundo azul mais escuro ao passar o mouse */
+}
+
+/* Estilo do contêiner de tarefas */
+.task-container {
+    display: flex; /* Usando flexbox para layout */
+    justify-content: space-between; /* Espaça os itens igualmente */
+    margin-top: 20px; /* Adiciona espaço acima do contêiner */
+}
+
+/* Estilo para cada status de tarefa */
+.status {
+    width: 23%; /* Largura de cada coluna de status */
+    background-color: #333; /* Cor de fundo cinza escuro */
+    padding: 10px; /* Adiciona padding dentro da coluna */
+    border-radius: 5px; /* Arredonda as bordas da coluna */
+}
+
+/* Estilo do título de cada status */
+.status h2 {
+    text-align: center; /* Centraliza o texto do título do status */
+}
+
+/* Estilo da lista de tarefas */
+.task-list {
+    margin-top: 10px; /* Espaço acima da lista de tarefas */
+}
+
+/* Estilo de cada tarefa individual */
+.task {
+    background-color: white; /* Cor de fundo branca para a tarefa */
+    color: black; /* Cor do texto preta */
+    padding: 15px; /* Adiciona padding ao redor do texto da tarefa */
+    margin: 10px 0; /* Adiciona margem vertical entre as tarefas */
+    border-radius: 5px; /* Arredonda as bordas da tarefa */
+    position: relative; /* Para posicionar o botão de remoção */
+    cursor: move; /* Muda o cursor para indicar que a tarefa pode ser arrastada */
+}
+
+/* Estilo do botão de remoção na tarefa */
+.remove-btn {
+    position: absolute; /* Posiciona o botão de remoção de forma absoluta */
+    top: 5px; /* Alinha o botão 5px do topo */
+    right: 10px; /* Alinha o botão 10px da direita */
+    background: none; /* Remove fundo do botão */
+    border: none; /* Remove a borda do botão */
+    color: #e74c3c; /* Cor do botão de remoção em vermelho */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+/* Efeito ao passar o mouse sobre o botão de remoção */
+.remove-btn:hover {
+    color: #c0392b; /* Cor mais escura ao passar o mouse */
+}
