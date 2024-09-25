@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a visualização responsiva -->
+    <title>To Do List</title> <!-- Título da página -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o arquivo CSS -->
+</head>
+<body>
+
+    <div class="container"> <!-- Contêiner principal da aplicação -->
+        <h1>To Do List</h1> <!-- Título da aplicação -->
+        <input type="text" id="taskInput" placeholder="Adicione uma nova tarefa..."> <!-- Campo de entrada para nova tarefa -->
+        <button id="addTaskBtn">Adicionar</button> <!-- Botão para adicionar nova tarefa -->
+
+        <div class="task-container"> <!-- Contêiner para as colunas de status -->
+            <div class="status" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)"> <!-- Coluna "A Fazer" -->
+                <h2>A Fazer</h2> <!-- Título da coluna -->
+                <div class="task-list"></div> <!-- Lista de tarefas nesta coluna -->
+            </div>
+            <div class="status" id="in-progress" ondrop="drop(event)" ondragover="allowDrop(event)"> <!-- Coluna "Em Progresso" -->
+                <h2>Em Progresso</h2> <!-- Título da coluna -->
+                <div class="task-list"></div> <!-- Lista de tarefas nesta coluna -->
+            </div>
+            <div class="status" id="review" ondrop="drop(event)" ondragover="allowDrop(event)"> <!-- Coluna "Em Revisão" -->
+                <h2>Em Revisão</h2> <!-- Título da coluna -->
+                <div class="task-list"></div> <!-- Lista de tarefas nesta coluna -->
+            </div>
+            <div class="status" id="done" ondrop="drop(event)" ondragover="allowDrop(event)"> <!-- Coluna "Concluídas" -->
+                <h2>Concluídas</h2> <!-- Título da coluna -->
+                <div class="task-list"></div> <!-- Lista de tarefas nesta coluna -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link para o arquivo JavaScript -->
+</body>
+</html>
