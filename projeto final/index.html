@@ -3,88 +3,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Igreja da Comunidade</title>
+    <title>Nutricionista</title>
+    <!-- Link via CDN para Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+
+
+<style>
+
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #eef2f3; /* Cor de fundo suave */
+}
+
+h1 {
+    color: #dfe4e9; /* Cor de texto escura */
+}
+
+h2 {
+    color: black;
+}
+
+h3{
+    color: black;
+}
+
+a {
+    color: #eeeeee; /* Cor vibrante para links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(to right, #093049, #093049);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* Banner */
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px; /* Arredondar bordas das imagens */
+}
+
+/* Coleções */
+#Coleção {
+    background-color: #ffffff; /* Fundo branco para destacar coleções */
+    padding: 40px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#Coleção .col-md-3 {
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#Coleção .col-md-3:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Vídeo */
+iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 315px;
+    border-radius: 8px; /* Arredondar bordas do vídeo */
+}
+
+/* Formulário de Contato */
+form {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Especialidades */
+.d-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.d-grid > div {
+    padding: 20px;
+    background: linear-gradient(to right, #085321, #085321);
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+   
+}
+
+.d-grid > div:hover {
+    background: linear-gradient(to right, #085321, #085321);
+}
+
+/* Calculadora IMC */
+#imcResult {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, #2980b9, #3498db);
+    color: white;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer h5 {
+    margin-bottom: 15px;
+}
+
+footer .row {
+    display: flex;
+    justify-content: center;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: #e74c3c;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #c0392b; /* Cor mais escura ao passar o mouse */
+}
+</style>
+
+
+
+
+
 </head>
 <body>
-    <header>
-        <h1>Igreja da Comunidade</h1>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#eventos">Eventos</a></li>
-                <li><a href="#galeria">Galeria</a></li>
-                <li><a href="#testemunhos">Testemunhos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+<header class=" text-center">
+    <h1>Consultoria Nutricional</h1>
+    <nav>
+        <a href="#Coleção" class="mx-3">Coleção</a>
+        <a href="#receitas" class="mx-3">Receitas</a>
+        <a href="#exames" class="mx-3">Exames</a>
+        <a href="#imc" class="mx-3">IMC</a>
+    </nav>
+</header>
 
-    <section id="sobre">
-        <h2>Sobre Nós</h2>
-        <p>Bem-vindo à Igreja da Comunidade, onde você encontra amor, apoio e fé. Nossa missão é compartilhar a palavra de Deus e apoiar nossa comunidade.</p>
-    </section>
-
-    <section id="servicos">
-        <h2>Nossos Serviços</h2>
-        <ul>
-            <li>Domingo: 10h - Culto Matutino</li>
-            <li>Quarta-feira: 19h - Estudo Bíblico</li>
-        </ul>
-    </section>
-
-    <section id="eventos">
-        <h2>Próximos Eventos</h2>
-        <ul>
-            <li>08/10: Culto de Ação de Graças</li>
-            <li>15/10: Palestra sobre Família</li>
-            <li>22/10: Festival de Música Gospel</li>
-        </ul>
-    </section>
-
-    <section id="galeria">
-        <h2>Galeria</h2>
-        <div class="galeria-grid">
-            <img src="imagem1.jpg" alt="Evento da Igreja">
-            <img src="imagem1.jpg" alt="Culto">
-            <img src="imagem1.jpg" alt="Atividade com Crianças">
-            <img src="imagem1.jpg" alt="Reunião de Oração">
+<!-- Banner/Slides -->
+<section id="banner" class="mb-4">
+    <div id="carouselExample" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="caminho/para/imagem1.jpeg" class="d-block w-100" alt="Banner 1">
+            </div>
+            <div class="carousel-item">
+                <img src="caminho/para/imagem2.webp" class="d-block w-100" alt="Banner 2">
+            </div>
+            <div class="carousel-item">
+                <img src="caminho/para/imagem3.jpeg" class="d-block w-100" alt="Banner 3">
+            </div>
         </div>
-    </section>
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+        </a>
+    </div>
+</section>
 
-    <section id="testemunhos">
-        <h2>Testemunhos</h2>
-        <blockquote>
-            <p>"A Igreja da Comunidade mudou minha vida! Sinto-me acolhido e amado."</p>
-            <cite>- Maria Silva</cite>
-        </blockquote>
-        <blockquote>
-            <p>"Aqui encontrei amigos e uma nova família."</p>
-            <cite>- João Pereira</cite>
-        </blockquote>
-    </section>
+<!-- Vídeo -->
+<section class="text-center mb-4">
+    <h2>Conheça Nosso Trabalho</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/2RDlDtrnL2I" frameborder="0" allowfullscreen></iframe>
+</section>
 
-    <section id="contato">
-        <h2>Contato</h2>
-        <form id="contatoForm">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-        <div id="respostaMensagem"></div>
-    </section>
+<!-- Coleções -->
+<section id="Coleção" class="text-center mb-4">
+    <h2>Coleções</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <h3><a href="produtos.html" class="text-dark">Produtos</a></h3>
+            <p>Conheça nossos produtos saudáveis.</p>
+        </div>
+        <div class="col-md-3">
+            <h3><a href="receitas.html" class="text-dark">Receitas</a></h3>
+            <p>Receitas deliciosas e saudáveis.</p>
+        </div>
+        <div class="col-md-3">
+            <h3><a href="exames.html" class="text-dark">Exames</a></h3>
+            <p>Exames para acompanhar sua saúde.</p>
+        </div>
+        <div class="col-md-3">
+            <h3><a href="imc.html" class="text-dark">IMC</a></h3>
+            <p>Calcule seu IMC aqui.</p>
+        </div>
+    </div>
+</section>
 
-    <footer>
-        <p>&copy; 2024 Igreja da Comunidade | <a href="#sobre">Voltar ao topo</a></p>
-        <p>Endereço: Rua da Fé, 123 - Cidade, Estado</p>
-        <p>Email: contato@igrejacomunidade.com | Telefone: (11) 1234-5678</p>
-    </footer>
+<section id="receitas" class="text-center mb-4">
+    <h2>Receitas Saudáveis</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <h3><a href="receita1.html" class="text-dark">Salada de Quinoa</a></h3>
+            <p>Uma deliciosa salada rica em proteínas e fibras.</p>
+        </div>
+        <div class="col-md-4">
+            <h3><a href="receita2.html" class="text-dark">Smoothie Verde</a></h3>
+            <p>Uma bebida refrescante cheia de nutrientes.</p>
+        </div>
+        <div class="col-md-4">
+            <h3><a href="receita3.html" class="text-dark">Bolo de Banana Integral</a></h3>
+            <p>Um bolo saudável e saboroso, perfeito para o lanche.</p>
+        </div>
+    </div>
+</section>
 
-    <script src="script.js"></script>
+</section>
+
+<!-- Formulário de Contato -->
+<section class="mb-4">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Contato</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem:</label>
+                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <img src="caminho/para/imagem_contato.jpg" alt="Imagem de Contato" class="img-fluid">
+        </div>
+    </div>
+</section>
+
+<!-- Especialidades -->
+<section class="mb-4">
+    <h2>Especialidades</h2>
+    <div class="d-grid grid-template-columns-4">
+        <div class="p-3 border">Nutrição Clínica</div>
+        <div class="p-3 border">Nutrição Esportiva</div>
+        <div class="p-3 border">Nutrição Funcional</div>
+        <div class="p-3 border">Nutrição Infantil</div>
+    </div>
+</section>
+
+<!-- Calculadora IMC -->
+<section class="mb-4">
+    <h2>Calculadora IMC</h2>
+    <form id="imcForm">
+        <div class="form-group">
+            <label for="weight">Peso (kg):</label>
+            <input type="number" class="form-control" id="weight" required>
+        </div>
+        <div class="form-group">
+            <label for="height">Altura (m):</label>
+            <input type="number" class="form-control" id="height" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Calcular IMC</button>
+    </form>
+    <p id="imcResult" class="mt-3"></p>
+</section>
+
+<!-- Footer -->
+<footer class="bg-light text-center p-4">
+    <div class="row">
+        <div class="col-md-4">
+            <h5>Sobre Nós</h5>
+            <p>Informações sobre a equipe.</p>
+        </div>
+        <div class="col-md-4">
+            <h5>Serviços</h5>
+            <p>Consultoria e acompanhamento nutricional.</p>
+        </div>
+        <div class="col-md-4">
+            <h5>Contato</h5>
+            <p>Email: contato@nutricionista.com</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Função para calcular o IMC
+    document.getElementById('imcForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const weight = parseFloat(document.getElementById('weight').value);
+        const height = parseFloat(document.getElementById('height').value);
+        const imc = (weight / (height * height)).toFixed(2);
+        document.getElementById('imcResult').innerText = `Seu IMC é: ${imc}`;
+    });
+
+   
+
+</script>
+
 </body>
 </html>
