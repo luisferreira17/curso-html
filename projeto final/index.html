@@ -152,7 +152,87 @@ footer .row {
 .btn-primary:hover {
     background-color: #c0392b; /* Cor mais escura ao passar o mouse */
 }
+
+/* Seção de Especialidades */
+.d-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+    background-color: #f0f8ff; /* Fundo azul claro */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.d-grid > div {
+    padding: 20px;
+    background: linear-gradient(to bottom, #007bff, #2196F3); /* Gradiente de azul */
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.d-grid > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Seção de Contato */
+.contato {
+    background-color: #e6f0ff; /* Azul claro */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.contato h2 {
+    color: #007bff; /* Azul vibrante */
+}
+
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;   
+
+}
+
+button[type="submit"]:hover {
+    background-color:   
+ #0056b2;
+}
+
+.contato {
+    background-color: #f0f8ff; /* Azul claro */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-outline-primary {
+    border: 2px solid #007bff;
+    color: #007bff;
+}
 </style>
+
+
 
 
 
@@ -165,8 +245,9 @@ footer .row {
     <nav>
         <a href="#Coleção" class="mx-3">Coleção</a>
         <a href="#receitas" class="mx-3">Receitas</a>
-        <a href="#exames" class="mx-3">Exames</a>
+        <a href="#especialidades" class="mx-3">Especialidades</a>
         <a href="#imc" class="mx-3">IMC</a>
+        <a href="#contato" class="mx-3">Contato</a>
     </nav>
 </header>
 
@@ -243,36 +324,8 @@ footer .row {
 </section>
 
 </section>
-
-<!-- Formulário de Contato -->
-<section class="mb-4">
-    <div class="row">
-        <div class="col-md-6">
-            <h2>Contato</h2>
-            <form>
-                <div class="form-group">
-                    <label for="name">Nome:</label>
-                    <input type="text" class="form-control" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensagem:</label>
-                    <textarea class="form-control" id="message" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-        </div>
-        <div class="col-md-6">
-            <img src="caminho/para/imagem_contato.jpg" alt="Imagem de Contato" class="img-fluid">
-        </div>
-    </div>
-</section>
-
 <!-- Especialidades -->
-<section class="mb-4">
+<section id="especialidades"class="mb-4">
     <h2>Especialidades</h2>
     <div class="d-grid grid-template-columns-4">
         <div class="p-3 border">Nutrição Clínica</div>
@@ -283,7 +336,7 @@ footer .row {
 </section>
 
 <!-- Calculadora IMC -->
-<section class="mb-4">
+<section id="imc"class="mb-4">
     <h2>Calculadora IMC</h2>
     <form id="imcForm">
         <div class="form-group">
@@ -298,6 +351,45 @@ footer .row {
     </form>
     <p id="imcResult" class="mt-3"></p>
 </section>
+
+<!-- Formulário de Contato -->
+<section id="contato" class="contato">
+    <h2>Entre em Contato</h2>
+    <p>Tem alguma dúvida? Entre em contato conosco e agende uma consulta!</p>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" class="form-control" id="nome"   
+ name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem:</label>   
+
+                        <textarea class="form-control" id="mensagem" name="mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary   
+ btn-block">Enviar Mensagem</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h3>Informações de Contato</h3>
+                <p><strong>Endereço:</strong> [Seu Endereço]</p>
+                <p><strong>Telefone:</strong> [Seu Telefone]</p>
+                <p><strong>Email:</strong> [Seu Email]</p>
+                <a href="#" class="btn btn-outline-primary">Agendar Consulta</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <!-- Footer -->
 <footer class="bg-light text-center p-4">
