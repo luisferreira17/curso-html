@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Define a viewport para responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página -->
+    <title>Consultoria Nutricional</title>
+    <!-- Importa o CSS do Bootstrap para estilização -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Importa o CSS do Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Importa jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Importa Popper.js, necessário para o Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Importa o JavaScript do Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        /* ==========================
+        Estilos Globais
+        ========================== */
+
+        /* Corpo da página */
+        body {
+            font-family: 'Arial', sans-serif; /* Fonte padrão */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f3; /* Cor de fundo suave */
+            transition: background-color 0.5s ease; /* Transição suave de fundo */
+        }
+
+        /* Estilização de Títulos */
+        h1, h2, h3 {
+            color: #000; /* Cor dos títulos */
+        }
+
+        h2:hover, h3:hover {
+            color: #2196F3; /* Efeito de hover para mudar cor */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra para os títulos */
+        }
+
+        /* Links */
+        a {
+            color: #eeeeee; /* Cor padrão dos links */
+            text-decoration: none; /* Remover o sublinhado */
+            transition: color 0.3s ease, background-color 0.3s ease; /* Transição suave */
+        }
+
+        a:hover {
+            color: #fff; /* Muda a cor no hover */
+            text-decoration: underline; /* Adiciona sublinhado */
+        }
+
+        /* Estilo de Botões */
+        .btn-primary {
+            background-color: #2196F3; /* Cor do botão */
+            border: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Cor de hover para o botão */
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #093049;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            text-align: center;
+        }
+
+        /* Navegação do Cabeçalho */
+        nav a {
+            margin: 0 15px;
+            color: #fff;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* Responsividade - Ajustes de navegação para telas menores */
+        @media (max-width: 768px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        /* Seções */
+        section {
+            background-color: #ffffff;
+            padding: 40px 0;
+            box-shadow: 0 2px 10px rgba(243, 242, 242, 0.1);
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Container com Flexbox */
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        /* Estilo de Texto nas Seções */
+        .text {
+            width: 45%;
+            color: #333;
+            font-size: 20px;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        /* Carrossel de Imagens */
+        .carousel-item img {
+            width: 100%;
+            max-height: 800px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Caixa com Efeitos */
+        .box {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .box:hover {
+            transform: scale(0.95) translateY(-20px); /* Efeito de hover */
+        }
+
+        /* Texto sobreposto na Imagem */
+        .meu-paragrafo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(253, 253, 253, 0.7);
+            z-index: 1;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Efeito Fade-In */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsividade - Ajustes para telas menores */
+        @media (max-width: 768px) {
+            .col-md-3 {
+                margin: 10px 0;
+            }
+
+            .carousel-item img {
+                height: auto;
+            }
+
+            .content-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="titulo-site">Consultoria Nutricional</h1>
+            <nav class="d-flex justify-content-center align-items-center">
+                <!-- Atualização dos links -->
+                <a href="#Colecao">Coleção</a>
+                <a href="receitas.html">Receitas</a>
+                <a href="exames.html">Exames</a>
+                <a href="imc.html">IMC</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="#Contato">Contato</a>
+                <a href="login.html" class="btn btn-outline-light ml-3">Login e Cadastro</a>
+            </nav>
+        </div>
+    </header>
+    <section id="banner" class="mb-4">
+        <!-- Carrossel de imagens -->
+        <div id="carouselExample" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./images/talvez banner.jpg" class="d-block w-100 banner-img" alt="Banner 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/possivel banner.jpg" class="d-block w-100 banner-img" alt="Banner 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/muito banner.jpg" class="d-block w-100 banner-img" alt="Banner 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Banner 04.jpeg" class="d-block w-100 banner-img last-banner" alt="Banner 4">
+                </div>
+            </div>
+            <!-- Controles do carrossel -->
+            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Seção dos quadradinhos -->
+   <!-- Seção dos quadradinhos -->
+<section class="text-center mb-4">
+    <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+        <!-- Quadradinho 1: Vida Saudável -->
+        <div class="quadradinho">
+            <img src="images/1587922-74104c35.png" alt="Vida Saudável">
+            <h3>Vida Saudável</h3>
+            <p>Descubra como cultivar hábitos que promovem o bem-estar físico e mental. Aqui, você encontrará dicas de alimentação equilibrada, receitas nutritivas e sugestões de exercícios. Pequenas mudanças podem levar a grandes resultados para uma vida mais plena e ativa!</p>
+        </div>
+
+        <!-- Quadradinho 2: Nossos Princípios -->
+        <div class="quadradinho">
+            <img src="images/3373025-6b0b95ff.png" alt="Nossos Princípios">
+            <h3>Nossos Princípios</h3>
+            <p>Valorizamos uma alimentação equilibrada que promove saúde a longo prazo e defendemos uma abordagem holística que considera alimentação, atividade física e saúde mental.</p>
+        </div>
+
+        <!-- Quadradinho 3: Agricultura Ecológica -->
+        <div class="quadradinho">
+            <img src="images/3462063-9a73c540.png" alt="Agricultura Ecológica">
+            <h3>Agricultura Ecológica</h3>
+            <p>Nossos produtos são cultivados com métodos sustentáveis, garantindo qualidade e respeito ao meio ambiente. A agricultura ecológica é essencial para um futuro mais saudável.</p>
+        </div>
+
+        <!-- Quadradinho 4: Boa Comida -->
+        <div class="quadradinho">
+            <img src="images/1880202-a2dd130f.png" alt="Boa Comida">
+            <h3>Boa Comida</h3>
+            <p>Acreditamos que boa comida é aquela que une sabor e nutrição. Neste espaço, celebramos receitas que não apenas agradam ao paladar, mas também nutrem o corpo.</p>
+        </div>
+    </div>
+
+    <style>
+        /* Estilo base para os quadradinhos */
+        .quadradinho {
+            border: 1px solid #ccc; /* Borda suave */
+            border-radius: 20px; /* Cantos mais arredondados */
+            padding: 20px; /* Mais espaço interno */
+            width: 220px; /* Tamanho ajustado */
+            text-align: center; /* Centraliza o conteúdo */
+            margin: 15px; /* Espaçamento entre quadradinhos */
+            background-color: #fff; /* Fundo branco para destacar */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave no hover */
+        }
+
+        /* Efeito de hover para os quadradinhos */
+        .quadradinho:hover {
+            transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
+        }
+
+        /* Estilo das imagens dentro dos quadradinhos */
+        .quadradinho img {
+            max-width: 100%; /* Imagens totalmente responsivas */
+            border-radius: 15px; /* Bordas arredondadas nas imagens */
+            margin-bottom: 15px; /* Espaçamento entre a imagem e o texto */
+        }
+
+        /* Estilo dos títulos dentro dos quadradinhos */
+        .quadradinho h3 {
+            font-size: 1.3rem; /* Tamanho do título */
+            margin-bottom: 10px; /* Espaçamento abaixo do título */
+            color: #333; /* Cor do título */
+        }
+
+        /* Estilo dos parágrafos dentro dos quadradinhos */
+        .quadradinho p {
+            font-size: 0.95rem; /* Tamanho do texto */
+            color: #666; /* Cor mais suave para o texto */
+            line-height: 1.5; /* Altura da linha mais confortável */
+        }
+
+        /* Responsividade: quadradinhos ficam maiores em telas menores */
+        @media (max-width: 768px) {
+            .quadradinho {
+                width: 100%; /* Quadradinhos ocupam a largura total em dispositivos menores */
+            }
+        }
+    </style>
+</section>
+
+    
+    <!-- Seção "Conheça Nosso Trabalho" -->
+    <section class="text-center mb-4 fade-in highlight-background">
+        <div class="content-container d-flex align-items-center flex-wrap justify-content-between">
+            <!-- "Quem Somos?" à esquerda -->
+            <div class="text-container col-12 col-md-6 mb-3 mb-md-0 text-left">
+                <h3 class="titulo-introdução"><b>Conheça Nosso Trabalho</b></h3>
+                <p class="paragrafo">
+                    Bem-vindo à nossa clínica de nutrição, um espaço dedicado à promoção da saúde e do bem-estar por meio da alimentação consciente e equilibrada.
+                </p>
+                <h3 class="titulo-introdução"><b>Quem Somos?</b></h3>
+                <p class="paragrafo">
+                    Nossa filosofia é baseada na educação nutricional e no empoderamento. Buscamos proporcionar hábitos saudáveis que melhorem a saúde física, mental e emocional.
+                </p>
+            </div>
+            
+            <!-- Imagem à direita -->
+            <div class="image-container col-12 col-md-5">
+                <img src="./images/fitness-healthy-lifestyle-concep.jpg" alt="Imagem da Clínica" class="img-fluid hover-effect rounded-lg shadow-sm">
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        /* Efeito de fade-in */
+        .fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+    
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    
+        /* Título animado com slide-in */
+        .slide-in {
+            animation: slideIn 1.2s ease-out forwards;
+        }
+    
+        @keyframes slideIn {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+    
+        /* Hover effect para imagem */
+        .hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .hover-effect:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+        }
+    
+        /* Layout de duas colunas */
+        .content-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+    
+        /* Estilo da imagem */
+        .image-container img {
+            width: 100%; /* Mantém a imagem responsiva */
+            max-width: 600px; /* Aumenta o tamanho máximo da imagem */
+            border-radius: 15px; /* Bordas arredondadas */
+            object-fit: cover; /* Ajusta a imagem para cobrir o espaço */
+            margin-bottom: 20px; /* Adiciona mais espaçamento embaixo da imagem */
+        }
+    
+        /* Tipografia do título e parágrafos */
+        .titulo-introdução {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+    
+        .paragrafo {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #555;
+            margin-bottom: 15px;
+        }
+    
+        /* Estilos de fundo */
+        .highlight-background {
+            background-color: #f7f7f7;
+            padding: 40px 20px;
+        }
+    
+        /* Margens e ajustes responsivos */
+        @media (max-width: 768px) {
+            .content-container {
+                text-align: center;
+            }
+    
+            .image-container img {
+                max-width: 100%; /* Ajusta a imagem para ocupar toda a largura em telas pequenas */
+            }
+        }
+    </style>
+    
+
+<!-- Seção "Nossos Serviços" -->
+<section class="bg-light py-5 services-container">
+    <div class="services-section text-center fade-in">
+        <h2 class="titulo-introdução"><b>Nossos Serviços</b></h2>
+        <p class="paragrafo">Oferecemos uma ampla gama de serviços e produtos, incluindo:</p>
+        <ul class="paragrafo list-unstyled services-list">
+            <li><b>Produtos Nutricionais:</b> Suplementos e produtos alimentares que apoiam uma dieta equilibrada.</li>
+            <li><b>Exames Nutricionais:</b> Avaliação do estado nutricional para personalizar seu plano alimentar.</li>
+            <li><b>Receitas Personalizadas:</b> Receitas adaptadas aos seus gostos e necessidades.</li>
+            <li><b>Calculadora de IMC:</b> Ferramenta online para monitorar sua saúde.</li>
+            <li><b>Acompanhamento Contínuo:</b> Suporte regular para ajustar seu plano alimentar.</li>
+        </ul>
+
+        <h2 class="titulo-introdução"><b>Participe!</b></h2>
+        <p class="paragrafo">
+            Convidamos você a agendar uma consulta e dar o primeiro passo em direção a uma vida mais saudável. Nossa equipe está pronta para acolhê-lo e ajudá-lo a alcançar seus objetivos!
+        </p>
+    </div>
+</section>
+
+<style>
+/* =========================== 
+   Estilos para a seção "Conheça Nosso Trabalho"
+   =========================== */
+
+.highlight-background {
+    background-color: #f8f9fa;
+    padding: 50px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-out;
+}
+
+.titulo-introdução {
+    font-size: 2.8rem;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #333;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.titulo-introdução:hover {
+    color: #007bff;
+    text-shadow: 0px 0px 15px rgba(0, 123, 255, 0.5);
+    transform: scale(1.05);
+}
+
+.paragrafo {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #666;
+    font-family: 'Verdana', sans-serif;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    transition: color 0.3s ease;
+}
+
+.paragrafo:hover {
+    color: #007bff;
+}
+
+/* =========================== 
+   Layout Flexível com Justificação de Itens
+   =========================== */
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.text-container {
+    width: 45%;
+    padding: 20px;
+}
+
+.image-container {
+    width: 45%;
+    padding: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* =========================== 
+   Animações e Efeitos
+   =========================== */
+
+/* Fade-in da seção */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* =========================== 
+   Responsividade para telas menores
+   =========================== */
+
+/* Ajustes para telas menores (max-width: 768px) */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-container,
+    .image-container {
+        width: 80%;
+        padding: 10px;
+    }
+
+    .titulo-introdução {
+        font-size: 2rem;
+    }
+
+    .paragrafo {
+        font-size: 1rem;
+    }
+}
+
+/* =========================== 
+   Estilos para a seção "Nossos Serviços"
+   =========================== */
+
+.services-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    animation: slideIn 1.2s ease-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+.services-section:hover {
+    transform: translateY(-10px);
+}
+
+.services-section h2 {
+    font-size: 2.8rem;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #333;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.services-section h2:hover {
+    color: #007bff;
+    text-shadow: 0px 0px 15px rgba(0, 123, 255, 0.5);
+    transform: scale(1.05);
+}
+
+.services-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.services-list li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    transition: transform 0.3s ease, color 0.3s ease, background 0.3s ease;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.services-list li:hover {
+    transform: translateX(10px);
+    color: #fff;
+    background-color: #007bff;
+}
+
+/* =========================== 
+   Animações e Efeitos
+   =========================== */
+
+/* Efeito de Slide-In para a seção de serviços */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplica a animação de fade-in */
+.fade-in {
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* =========================== 
+   Responsividade para telas menores
+   =========================== */
+
+@media (max-width: 768px) {
+    .services-container {
+        padding: 40px 20px;
+    }
+
+    .services-section {
+        padding: 30px;
+        box-shadow: none;
+        border-radius: 10px;
+    }
+
+    .titulo-introdução {
+        font-size: 2rem;
+    }
+
+    .paragrafo, .services-list li {
+        font-size: 1rem;
+    }
+
+    .services-list li {
+        margin-bottom: 15px;
+    }
+}
+</style>
+<!-- Seção Variedades -->
+<section id="Colecao" class="text-center mb-4 fade-in">
+    <h2><b>Variedades</b></h2>
+    <br>
+    <div class="row justify-content-center">
+        <div class="container d-flex justify-content-around">
+            <!-- Seção Produtos -->
+            <div class="box fade-in banner-item">
+                <a href="produtos.html">
+                    <div class="overlay"></div>
+                    <p class="meu-paragrafo">Produtos</p>
+                    <img src="https://i0.wp.com/naturvida.com.br/wp-content/uploads/2023/08/4.jpg?fit=1080%2C1080&ssl=1" alt="Produtos" class="banner-img">
+                </a>     
+            </div>
+
+            <!-- Seção Exames -->
+            <div class="box fade-in banner-item">
+                <a href="exames.html">
+                    <div class="overlay"></div>
+                    <p class="meu-paragrafo">Exames</p>
+                    <img src="https://sanaresst.com.br/wp-content/uploads/2018/10/exame-medico-ocupacional-1046x697.jpg" alt="Exames" class="banner-img">
+                </a>
+            </div>
+
+            <!-- Seção Receitas -->
+            <div class="box fade-in banner-item">
+                <a href="receitas.html">
+                    <div class="overlay"></div>
+                    <p class="meu-paragrafo">Receitas</p>
+                    <img src="https://media.gazetadopovo.com.br/2024/03/01184019/flay-leigos-de-nozes-e-legumes-960x540.jpg" alt="Receitas" class="banner-img">
+                </a>
+            </div>
+
+            <!-- Seção IMC -->
+            <div class="box fade-in banner-item">
+                <a href="imc.html">
+                    <div class="overlay"></div>
+                    <p class="meu-paragrafo">Calculadora IMC</p>
+                    <img src="https://balancadigital.info/wp-content/uploads/2023/05/qual-a-balanca-mais-precisa-para-se-pesar.png" alt="IMC" class="banner-img">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .overlay {
+        pointer-events: none; /* Isso garante que a sobreposição não bloqueie os cliques no link */
+    }
+</style>
+
+
+<!-- CSS de Variedades -->
+<style>
+    /* Definindo a altura e largura das imagens e centralizando os itens */
+    .banner-item {
+        position: relative;
+        width: 250px; /* Ajuste conforme necessário */
+        margin: 10px;
+    }
+
+    .banner-img {
+        width: 100%;
+        height: 250px; /* Ajuste conforme necessário */
+        object-fit: cover;
+        transition: filter 0.5s ease-in-out;
+    }
+
+    /* Estilo para o texto */
+    .meu-paragrafo {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Centraliza o texto horizontal e verticalmente */
+        z-index: 2;
+        text-align: center;
+    }
+
+    /* Overlay para o efeito de blur */
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+        transition: backdrop-filter 0.5s ease-in-out, opacity 0.5s;
+        opacity: 0;
+    }
+
+    /* Efeito hover no item */
+    .banner-item:hover .banner-img {
+        filter: blur(5px); /* Aplica blur na imagem ao passar o mouse */
+    }
+
+    .banner-item:hover .overlay {
+        opacity: 1; /* Mostra a overlay com blur */
+        backdrop-filter: blur(5px); /* Aplica blur no fundo do texto */
+    }
+
+    /* Ajuste da responsividade para alinhar as seções em dispositivos menores */
+    @media (max-width: 768px) {
+        .container {
+            flex-wrap: wrap;
+        }
+        .banner-item {
+            width: 100%; /* Para dispositivos menores, ocupa 100% da largura */
+        }
+    }
+</style>
+
+<!-- Form de Contato -->
+<section id="Contato" class="mb-4 fade-in">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h2><i class="fas fa-envelope"></i> <b>Contato</b></h2>
+                </div>
+                <div class="card-body">
+                    <form id="contato-form">
+                        <div class="form-group">
+                            <label for="nome"><i class="fas fa-user"></i> <b>Nome:</b></label>
+                            <input type="text" class="form-control" id="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> <b>E-mail:</b></label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem"><i class="fas fa-comment"></i> <b>Mensagem:</b></label>
+                            <textarea class="form-control" id="mensagem" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                    <div id="resultado-mensagem" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+        
+    <!-- Localização -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h2><span role="img" aria-label="Localização">📍</span> <b>Localização</b></h2>
+                </div>
+                <div class="card-body">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.6834917530537!2d-48.072287623065286!3d-15.820634523605642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3391b366fc47%3A0x88c16b784a3ad98f!2sSenai%20Taguatinga!5e0!3m2!1sen!2sbr!4v1729222919421!5m2!1sen!2sbr" width="1200" height="380" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção O que nossos clientes dizem -->
+<section id="comentarios" class="container mt-5 fade-in">
+    <h2 class="text-center mb-4">O que nossos clientes dizem</h2>
+
+    <!-- Primeiro comentário -->
+    <div class="media mb-4 comentario-item">
+        <img src="./Laryssa Savior.png" class="mr-3 rounded-circle img-fluid cliente-img" alt="Cliente 1">
+        <div class="media-body">
+            <h5 class="mt-0 cliente-nome">Laryssa Savior</h5>
+            <p class="text-warning estrelas">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </p>
+            <p class="comentario-texto">
+                "Fiquei impressionada com os resultados que alcancei após o acompanhamento nutricional! O plano alimentar foi completamente personalizado e consegui mudar meus hábitos de forma definitiva. Recomendo muito!"
+            </p>
+        </div>
+    </div>
+
+    <!-- Segundo comentário -->
+    <div class="media mb-4 comentario-item">
+        <img src="./img/luis.jpg" class="mr-3 rounded-circle img-fluid cliente-img" alt="Cliente 2">
+        <div class="media-body">
+            <h5 class="mt-0 cliente-nome">Luis Felipe</h5>
+            <p class="text-warning estrelas">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </p>
+            <p class="comentario-texto">
+                "Excelente profissional! Além de um atendimento atencioso, o plano alimentar era muito bem balanceado e ajustado às minhas necessidades. Melhorei meu desempenho esportivo e minha saúde geral."
+            </p>
+        </div>
+    </div>
+
+    <!-- Terceiro comentário -->
+    <div class="media mb-4 comentario-item">
+        <img src="./img/cauo.jpg" class="mr-3 rounded-circle img-fluid cliente-img" alt="Cliente 3">
+        <div class="media-body">
+            <h5 class="mt-0 cliente-nome">Caio Barbosa</h5>
+            <p class="text-warning estrelas">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </p>
+            <p class="comentario-texto">
+                "O acompanhamento nutricional foi essencial para alcançar meus objetivos de saúde e bem-estar. A dedicação e o conhecimento do nutricionista fizeram toda a diferença no meu progresso!"
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- CSS -->
+<style>
+    /* Transição fade-in para toda a seção */
+    .fade-in {
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Estilo para o container dos comentários */
+    .comentario-item {
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        position: relative;
+    }
+
+    /* Efeito hover nos comentários */
+    .comentario-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Estilo da imagem de perfil dos clientes */
+    .cliente-img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border: 2px solid #f1f1f1;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Efeito hover na imagem de perfil */
+    .cliente-img:hover {
+        transform: scale(1.1);
+    }
+
+    /* Estilo para o nome do cliente */
+    .cliente-nome {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* Estrelas de avaliação */
+    .estrelas i {
+        font-size: 1.1em;
+    }
+
+    /* Texto dos comentários */
+    .comentario-texto {
+        font-size: 1em;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    /* Responsividade para telas menores */
+    @media (max-width: 768px) {
+        .cliente-img {
+            width: 60px;
+            height: 60px;
+        }
+        
+        .cliente-nome {
+            font-size: 1em;
+        }
+        
+        .comentario-texto {
+            font-size: 0.9em;
+        }
+    }
+</style>
+
+<!-- Estilos para a seção de Perguntas Frequentes -->
+<style>
+    body {
+        font-family: Arial, sans-serif; /* Fonte da página */
+        margin: 20px; /* Margem em torno da página */
+        padding: 0; /* Sem padding na página */
+        background-color: #f7f7f7; /* Cor de fundo da página */
+    }
+
+    h1 {
+        color: #0056b3; /* Cor do título */
+        text-align: center; /* Centraliza o título */
+        margin-bottom: 20px; /* Espaço abaixo do título */
+        font-size: 2.5rem; /* Tamanho do texto do título */
+    }
+
+    
+
+
+    .faq-container {
+        max-width: 800px; /* Largura máxima do contêiner */
+        margin: 0 auto; /* Centraliza o contêiner */
+        padding: 20px; /* Espaço interno do contêiner */
+        background-color: #fff; /* Cor de fundo do contêiner */
+        border-radius: 8px; /* Cantos arredondados */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra do contêiner */
+    }
+
+    .faq-item {
+        margin-bottom: 15px; /* Espaço abaixo de cada item */
+        border: 1px solid #ddd; /* Borda ao redor do item */
+        border-radius: 8px; /* Cantos arredondados para os itens */
+        transition: background-color 0.3s, transform 0.3s; /* Efeitos de transição */
+    }
+
+    .faq-item h2 {
+        color: #333; /* Cor do título da pergunta */
+        font-size: 1.5rem; /* Tamanho do texto do título da pergunta */
+        cursor: pointer; /* Indica que o título é clicável */
+        padding: 15px; /* Espaço interno do título */
+        background-color: #e0ecf7; /* Cor de fundo do título */
+        border-radius: 8px 8px 0 0; /* Cantos arredondados no topo */
+        margin: 0; /* Remove margens padrão */
+        display: flex; /* Usa flexbox para alinhamento */
+        justify-content: space-between; /* Espaço entre elementos */
+        align-items: center; /* Centraliza verticalmente */
+    }
+
+    .faq-item p {
+        display: none; /* Oculta a resposta inicialmente */
+        padding: 15px; /* Espaço interno da resposta */
+        background-color: #f0f0f0; /* Cor de fundo da resposta */
+        border-radius: 0 0 8px 8px; /* Cantos arredondados na parte inferior */
+        margin: 0; /* Remove margens padrão */
+    }
+
+    .faq-item:hover {
+        background-color: #f9f9f9; /* Altera a cor de fundo ao passar o mouse */
+        transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+    }
+
+    .faq-item h2:after {
+        content: "▼"; /* Seta que indica que pode ser expandido */
+        font-size: 1rem; /* Tamanho da seta */
+        margin-left: 10px; /* Espaço à esquerda da seta */
+        transition: transform 0.3s; /* Efeito de transição ao rotacionar */
+    }
+
+    .faq-item h2.active:after {
+        transform: rotate(180deg); /* Inverte a seta quando o item está ativo */
+    }
+</style>
+
+<h1>Perguntas Frequentes</h1>
+
+<div class="faq-container">
+    <div class="faq-item">
+        <h2>1. O que é uma dieta balanceada?</h2>
+        <p>Uma dieta balanceada é aquela que inclui uma variedade de alimentos em proporções adequadas para fornecer os nutrientes necessários ao corpo. Ela inclui proteínas, carboidratos, gorduras saudáveis, vitaminas e minerais.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h2>2. Qual a importância da hidratação para o corpo?</h2>
+        <p>A hidratação adequada é essencial para o funcionamento de todas as células e órgãos do corpo. Ela auxilia na regulação da temperatura corporal, transporte de nutrientes e remoção de resíduos.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h2>3. Comer carboidratos à noite engorda?</h2>
+        <p>Não é necessariamente o horário em que você consome carboidratos que leva ao ganho de peso, mas sim o excesso de calorias consumidas durante o dia. Carboidratos podem ser consumidos à noite com moderação.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h2>4. Como posso saber qual é a quantidade ideal de calorias que devo consumir por dia?</h2>
+        <p>A quantidade de calorias que você deve consumir depende de fatores como idade, sexo, peso, altura e nível de atividade física. Um nutricionista pode ajudar a calcular sua necessidade calórica diária.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h2>5. Qual a diferença entre alimentos integrais e refinados?</h2>
+        <p>Alimentos integrais são aqueles que não passaram por processos de refinação e, portanto, preservam suas fibras e nutrientes. Já os alimentos refinados perdem parte das fibras e nutrientes no processo de industrialização.</p>
+    </div>
+</div>
+
+<script>
+    // Seleciona todos os títulos das perguntas
+    const faqItems = document.querySelectorAll('.faq-item h2');
+    
+    // Adiciona um evento de clique a cada título
+    faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const content = item.nextElementSibling; // Seleciona a resposta correspondente
+            // Alterna a visibilidade da resposta
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            // Adiciona ou remove a classe 'active' para animar a seta
+            item.classList.toggle('active');
+        });
+    });
+</script>
+
+<!-- Footer -->
+<footer>
+    <div class="container text-center">
+        <div class="row">
+            <!-- Seção Sobre Nós -->
+            <div class="col-md-4">
+                <h5>Sobre Nós</h5>
+                <p>Somos uma equipe dedicada à saúde e bem-estar, oferecendo serviços personalizados.</p>
+                <p>Nossa missão é ajudar você a alcançar seus objetivos de forma saudável.</p>
+            </div>
+            <!-- Seção Serviços -->
+            <div class="col-md-4">
+                <h5>Serviços</h5>
+                <ul>
+                    <li>Avaliação Nutricional</li>
+                    <li>Planejamento de Dietas Personalizadas</li>
+                    <li>Consultas de Acompanhamento</li>
+                    <li>Orientação em Atividade Física</li>
+                </ul>
+            </div>
+            <!-- Seção Contato -->
+            <div class="col-md-4">
+                <h5>Contato</h5>
+                <p>Email: contato@nutricionista.com</p>
+                <p>Telefone: (11) 98765-4321</p>
+                <p>Endereço: Rua Exemplo, 123 - São Paulo, SP</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com" target="_blank"><i class="fab fa-x"></i></a> <!-- Ícone atualizado para o X -->
+                </div>
+            </div>
+        </div>
+
+        <p>&copy; 2024 <i>Centro Nutricional.</i> Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<style>
+/* Rodapé - Footer */
+footer {
+    background-color: #2196f3; /* Cor de fundo azul */
+    color: white; /* Cor do texto */
+    padding: 40px 20px; /* Espaçamento interno */
+    font-size: 0.9em; /* Tamanho do texto */
+    text-align: center; /* Centraliza o conteúdo */
+    width: 100%; /* Garante que o rodapé ocupe toda a largura da tela */
+    margin: 0; /* Remove margem lateral */
+    position: relative; /* Para o efeito de sombra */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease-in-out; /* Transição suave para a cor de fundo e sombra */
+    z-index: 999; /* Garante que o rodapé fique acima de outros elementos */
+}
+
+/* Título do rodapé */
+footer h5 {
+    font-size: 1.4em; /* Tamanho da fonte do título */
+    text-transform: uppercase; /* Texto em letras maiúsculas */
+    border-bottom: 2px solid #1976d2; /* Linha abaixo do título */
+    padding-bottom: 10px; /* Espaçamento abaixo do título */
+}
+
+/* Parágrafos e listas no rodapé */
+footer p, footer ul {
+    margin-bottom: 15px; /* Margem inferior */
+}
+
+footer ul {
+    list-style-type: none; /* Remove marcadores da lista */
+    padding: 0; /* Remove o padding padrão */
+}
+
+footer ul li {
+    margin: 5px 0; /* Espaçamento vertical entre os itens */
+}
+
+footer ul li a {
+    color: #e3f2f1; /* Cor dos links no rodapé */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+footer ul li a:hover {
+    text-decoration: underline; /* Sublinhado no hover */
+}
+
+/* Container principal do rodapé */
+footer .container {
+    max-width: 1200px; /* Largura máxima */
+    margin: auto; /* Centraliza o container */
+}
+
+/* Estilo das linhas no rodapé */
+footer .row {
+    display: flex; /* Flexbox para alinhar o conteúdo */
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+    justify-content: space-between; /* Espaço entre os itens */
+}
+
+/* Ícones de redes sociais */
+footer .fab {
+    margin: 0 15px; /* Margem entre os ícones */
+    color: #e3f2f1; /* Cor inicial dos ícones */
+    font-size: 1.6em; /* Tamanho maior para os ícones */
+    transition: color 0.3s, transform 0.3s ease-in-out; /* Transição suave para a cor e o efeito de hover */
+}
+
+/* Efeito de hover nos ícones */
+footer .fab:hover {
+    color: #ffffff; /* Muda a cor no hover */
+    transform: scale(1.1); /* Aumenta o tamanho dos ícones no hover */
+}
+
+/* Estilo para os ícones de redes sociais (ajustes de visualização) */
+footer .social-icons a {
+    text-decoration: none; /* Remove sublinhado dos links */
+    display: inline-block;
+    padding: 5px;
+    transition: transform 0.3s ease-in-out; /* Transição suave ao passar o mouse */
+}
+
+footer .social-icons a:hover {
+    transform: scale(1.2); /* Aumenta o ícone no hover */
+}
+
+/* Efeito de sombra quando o mouse passar sobre o rodapé */
+footer:hover {
+    background-color: #1976d2; /* Muda a cor de fundo para um tom mais escuro ao passar o mouse */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Adiciona sombra suave */
+}
+
+/* Estilo do último parágrafo no rodapé */
+footer p:last-child {
+    margin-top: 30px; /* Espaçamento superior */
+    font-size: 0.8em; /* Tamanho menor da fonte */
+    color: #e3f2f1; /* Cor do texto */
+}
+</style>
+
+<script>
+    // Adiciona um evento de "submit" ao formulário de contato
+    document.getElementById('contato-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário, evitando que a página seja recarregada
+
+        // Obtém os valores dos campos 'nome' e 'mensagem' do formulário
+        const nome = document.getElementById('nome').value;
+        const mensagem = document.getElementById('mensagem').value;
+
+        // Exibe uma mensagem de agradecimento ao usuário, utilizando o nome informado no campo
+        document.getElementById('resultado-mensagem').innerText = `Obrigado, ${nome}! Sua mensagem foi enviada.`;
+
+        // Limpa os campos do formulário após o envio
+        this.reset();
+    });
+
+    // Função de scroll suave para links de âncoras
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault(); // Impede o comportamento padrão do link, que seria saltar diretamente para a âncora
+
+            // Realiza a rolagem suave até o elemento de destino da âncora
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth' // Define o comportamento de rolagem como suave
+            });
+        });
+    });
+
+    // Espera até o conteúdo da página ser totalmente carregado
+    document.addEventListener('DOMContentLoaded', function() {
+        // Seleciona todos os elementos que possuem a classe 'fade-in'
+        const fadeIns = document.querySelectorAll('.fade-in');
+
+        // Função para verificar se o elemento está visível na tela
+        function checkVisibility() {
+            const triggerBottom = window.innerHeight * 0.8; // Define o ponto de ativação como 80% da altura da janela
+
+            fadeIns.forEach(fadeIn => {
+                const boxTop = fadeIn.getBoundingClientRect().top; // Pega a posição do topo do elemento em relação à tela
+
+                // Se o topo do elemento está acima do ponto de ativação (80% da altura da janela), adiciona a classe 'visible'
+                if (boxTop < triggerBottom) {
+                    fadeIn.classList.add('visible');
+                } else {
+                    fadeIn.classList.remove('visible'); // Caso contrário, remove a classe 'visible' se o elemento não estiver visível
+                }
+            });
+        }
+
+        // Adiciona um evento de scroll para verificar a visibilidade do elemento ao rolar a página
+        window.addEventListener('scroll', checkVisibility);
+
+        // Chama a função imediatamente ao carregar a página para garantir que os elementos visíveis sejam ativados
+        checkVisibility();
+    });
+
+    // Evento de scroll para aplicar animação à seção de serviços
+    window.addEventListener('scroll', function() {
+        const servicesSection = document.querySelector('.services-section');
+        const sectionPosition = servicesSection.getBoundingClientRect().top; // Posição da seção em relação à janela de visualização
+        const screenPosition = window.innerHeight / 1.2; // Ponto da tela onde a animação começa (a seção deve estar 1/1.2 da altura da tela)
+
+        // Se a posição da seção estiver acima do ponto da tela, adiciona a classe 'slide-in' à seção, ativando a animação
+        if (sectionPosition < screenPosition) {
+            servicesSection.classList.add('slide-in');
+        }
+    });
+</script>
+
+</body>
+</html>
